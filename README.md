@@ -3,11 +3,12 @@ JavaLeetcode
 
 ## Getting Started
 
+This project uses [commitlint](http://marionebl.github.io/commitlint/#/) to enforce [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/#summary) message style. To install commitlint locally and add to git hook, run the following command:
+
 ```shell
-$ npm install # install commitlint
+$ npm install
 ```
 
-Read more about conventional commit [here](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ## Arrays and Hashing
 
