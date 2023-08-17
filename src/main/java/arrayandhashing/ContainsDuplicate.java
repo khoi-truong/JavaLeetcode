@@ -10,8 +10,7 @@ import java.util.Map;
  * Space complexity: O(n)
  */
 
-public class ContainsDuplicate {
-    
+class ContainsDuplicate {
     public boolean containsDuplicate(final int[] nums) {
         Map<Integer, Boolean> existed = new HashMap<>();
         for (Integer num : nums) {

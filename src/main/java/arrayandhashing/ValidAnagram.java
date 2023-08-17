@@ -1,28 +1,26 @@
 package arrayandhashing;
 
-import java.util.HashMap;
-import java.util.Map;
+/** Problem: Valid Anagram
+ * Leetcode: <a href="https://leetcode.com/problems/valid-anagram/">...</a>
+ * Solution: Hashing
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ */
 
-public class ValidAnagram {
-    public boolean isAnagram(String s, String t) {
-        if (s.equals(t)) {
-            return true;
+class ValidAnagram {
+    boolean isAnagram(final String s, final String t) {
+        int[] frequencies = new int[26];
+        for (char ch : s.toCharArray()) {
+            frequencies[ch - 'a']++;
         }
-        Map<Character, Integer> sChars = new HashMap<>();
-        for (char sChar : s.toCharArray()) {
-            sChars.put(sChar, sChars.getOrDefault(sChar, 0) + 1);
+        for (char ch : t.toCharArray()) {
+            frequencies[ch - 'a']--;
         }
-        for (char tChar : t.toCharArray()) {
-            Integer count = sChars.getOrDefault(tChar, 0);
-            if (count == 0) {
+        for (int f : frequencies) {
+            if (f != 0) {
                 return false;
             }
-            if (count == 1) {
-                sChars.remove(tChar);
-            } else {
-                sChars.put(tChar, sChars.get(tChar) - 1);
-            }
         }
-        return sChars.keySet().isEmpty();
+        return true;
     }
 }
